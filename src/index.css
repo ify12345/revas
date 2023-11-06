@@ -20,3 +20,11 @@ body{
   border: 3px solid black;
 }
 
+.bg-green{
+  background: linear-gradient(
+    to bottom, 
+    #25B922 0%,
+    #052704 100%
+);
+
+}
