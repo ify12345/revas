@@ -24,9 +24,9 @@ const EmailConfirmation = () => {
                 </div>
                 <p className="max-w-[178px] mx-auto text-[0.8rem]">Didn’t receive any message?</p>
                 <p className="max-w-[84px] text-[0.8rem] text-center mx-auto border-b border-black">Resend email</p>
-                <button className="max-w-full flex items-center justify-center gap-3 text-[0.5rem] lg:text-[1rem] bg-black text-white rounded-[50px] py-[12px]">Go back to Revas Homepage<AiOutlineArrowRight size={10} /></button>
+                <Link to="/" className="max-w-full flex items-center justify-center gap-3 text-[0.5rem] lg:text-[1rem] bg-black text-white rounded-[50px] py-[12px]">Go back to Revas Homepage<AiOutlineArrowRight size={10} /></Link>
              </form>
-             <div className="flex max-w-full items-center justify-center"><p>Do not Have an account?</p><Link className="font-[700]">Sign up</Link></div>
+             <div className="flex max-w-full items-center justify-center"><p>Do not Have an account?</p><Link to="/signup" className="font-[700]">Sign up</Link></div>
            </div>
        
 

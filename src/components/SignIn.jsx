@@ -29,9 +29,9 @@ const SignIn = () => {
                     </div>
                 <p className="text-[0.8rem] text-[#E6E1E5]">Forgot Password?</p>
                 </div>
-                <button className="max-w-full flex items-center justify-center gap-3 bg-black text-white rounded-[50px] py-[12px]">Login<AiOutlineArrowRight size={10} /></button>
+                <Link to="/dashboard" className="max-w-full flex items-center justify-center gap-3 bg-black text-white rounded-[50px] py-[12px]">Login<AiOutlineArrowRight size={10} /></Link >
              </form>
-             <div className="flex max-w-full items-center justify-center"><p>Already Have an account?</p><Link className="font-[700]">Sign In</Link></div>
+             <div className="flex max-w-full items-center justify-center"><p>Don't Have an account?</p><Link to="/signup" className="font-[700]">Sign up</Link></div>
            </div>
        
 

@@ -9,21 +9,31 @@ import saved from "../assets/bookmark_border.png";
 import alarm from "../assets/notifications_none.png";
 import settings from "../assets/Setting.png";
 import logout from "../assets/Logout.png";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import Side from "./Side";
+import { useState } from "react";
+import Recyclist from "./Recyclist";
 
 const DashBoard = () => {
+    const[active,setActive] = useState("dashboard")
+  const activeFunc = ()=>  setActive("dashboard")
+  const activeRecyclist = ()=>  setActive("recyclist")
+ const image = active === "dashboard" ? dash : dash1  
+ const image2 = active === "recyclist" ? dash : dash1  
+const clicked = active === "dashboard" ? "bg-black text-white " : ""
+ const clickeds = active === "recyclist" ? "bg-black text-white "  : ""
+
   return (
     <section className="w-screen h-screen flex">
         {/* left side */}
-        <aside className="w-[18%] h-screen flex flex-col bg-[#F5F5F5]  gap-4 justify-between">
+        <aside className="hidden w-[18%] h-fit  lg:flex flex-col bg-[#F5F5F5] gap-4 justify-between  px-2">
 
             <div className="max-w-full py-10  mx-8">
                 <img src={logo} alt="" />
             </div>
-
-            <div className="max-w-full flex flex-col text-[1rem] gap-4 pb-8 border-b border-gray-400 mx-2">
-               <Link className="flex gap-3 bg-black text-white px-4 rounded-[100px] py-2">
-                <img src={dash} alt="" />
+          
+            <div className="w-full flex flex-col text-[0.875rem] text-[#53545C] gap-4 pb-8 border-b border-gray-400 mx-1">
+               <Link onClick={activeFunc} className={`"max-w-full  max-w-full  gap-3 px-4 py-2 flex rounded-[100px] py-2" ${clicked}`}>
+                <img src={image} alt="" />
                 <p>Dashboard</p>
                </Link>
                <Link className="flex gap-3 px-4">
@@ -51,11 +61,10 @@ const DashBoard = () => {
                 <p>Settings</p>
                </Link>
             </div>
-
-            <div className="max-w-full flex flex-col text-[1rem] gap-4 pb-10 border-b border-gray-400 mx-2">
+            <div className="w-full flex flex-col text-[0.875rem] text-[#53545C] gap-4 pb-10 border-b border-gray-400 mx-2">
                 <p className="px-4">PRODUCT DATABASE</p>
-                <Link className="flex gap-3 px-4 rounded-[100px]  py-2">
-                <img className="bg-white" src={dash1} alt="" />
+                <Link onClick={activeRecyclist} className={`"flex gap-3 flex py-2 px-4 rounded-[100px] py-2" ${clickeds}`}>
+                <img className="" src={image2} alt="" />
                 <p>Recyclates</p>
                </Link>
                 <Link className="flex gap-3 px-4 rounded-[100px] py-2">
@@ -63,8 +72,7 @@ const DashBoard = () => {
                 <p>Feedbacks</p>
                </Link>
             </div>     
-
-            <div className="max-w-full flex flex-col text-[1rem] gap-4 mx-2">
+            <div className="w-full flex flex-col text-[1rem] gap-4 mx-2 mb-32">
                 <p className="px-4">SPOT MARKET</p>
                 <Link className="flex gap-3 px-4 rounded-[100px]  py-2">
                 <img className="bg-white" src={dash1} alt="" />
@@ -75,35 +83,27 @@ const DashBoard = () => {
                 <p>Spot Feedbacks</p>
                </Link>
             </div>     
-
-            <div className="max-w-full flex flex-col text-[1rem] gap-4 mx-2">
-                <Link className="flex gap-3 px-4 rounded-[100px] py-2">
+            <div className="w-full flex flex-col text-[1rem] gap-4 mx-2">
+                <Link to="/signin" className="flex gap-3 px-4 rounded-[100px] py-2">
                 <img src={logout} alt="" />
                 <p className="text-[#CC5F5F]">Logout</p>
                </Link>
             </div>          
-          
-
-
-
-
-
-
-
-
         </aside>
-        {/* right side */}
-        <main className="h-screen w-[82%]  py-20 px-10 flex flex-col gap-8">
-           <div className="bg-[#f5f5f5] max-w-[1087px] rounded-[12px]">
-                lorem1000
-           </div>
-           <div className="bg-[#f5f5f5] max-w-[1087px] rounded-[12px] flex flex-col gap-5">
-                <p className="font-[600] text-[20px] leading-[26px]">Welcome to Revas</p>
-                <p className="text-[0.9rem] max-w-[980px] leading-[18px]">To unlock the full features of Revas and become an approved company, you need to provide some information about yourself and your company.</p>
-               <p className="text-[0.9rem] max-w-[980px] leading-[18px]">Click <Link className="font-[800]"> start</Link> to begin setting up your company profile.</p>
-           </div>
-           <button className=" gap-3 max-w-[91px] flex bg-black text-white items-center text-center text-[0.9rem] justify-center rounded-[100px] py-[10px] px-[16px]">Start <AiOutlineArrowRight size={10}/></button>
-        </main>
+       
+
+
+
+
+
+         {
+            active === "dashboard" &&  <Side/>        
+         }
+         {
+             active === "recyclist" && <Recyclist/>
+         }
+ 
+        
     </section>
   )
 }

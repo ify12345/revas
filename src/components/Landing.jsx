@@ -21,10 +21,10 @@ const Landing = () => {
       {/* navbar */}
       <nav className="text-white flex justify-between py-24 px-5 md:px-10 items-center w-full gap-6 md:gap-2">
         <img className="object-cover min-w-fit" src={logo} alt="" />
-        <button className="rounded-3xl bg-white flex justify-between items-center border border-white text-black gap-2 max-w-[228px] py-3 px-5">
+        <Link to="/waitlist" className="rounded-3xl bg-white flex justify-between items-center border border-white text-black gap-2 max-w-[228px] py-3 px-5">
           <p className="hidden md:flex text-center">Join our waitlist</p>
           <AiOutlineArrowRight size={10} />
-        </button>
+        </Link>
       </nav>
       {/* second section */}
       <section className="text-white flex flex-col max-w-full h-auto pb-40 md:pb-64 w-full relative">
@@ -37,9 +37,9 @@ const Landing = () => {
             with confidence, bringing increased opportunity for recycled
             content for the world’s products and packaging.
           </p>
-          <button className="mx-auto max-w-[228px] rounded-3xl bg-white flex items-center border border-white text-black gap-2 py-3 px-5">
+          <Link to="/waitlist" className="mx-auto max-w-[228px] rounded-3xl bg-white flex items-center border border-white text-black gap-2 py-3 px-5">
             Join our waitlist <AiOutlineArrowRight size={10} />
-          </button>
+          </Link>
         </div>
 
         <div className="max-w-[23px] md:max-w-[88px] absolute top-0 left-0  sm:top-[60px] sm:left-[50px] z-0">
@@ -97,9 +97,9 @@ const Landing = () => {
                 the ASTM D7611 “#1, PET or PETE” resin identification code and
                 that is clear, transparent green, or transparent light blue.
               </p>
-              <button className="flex text-white bg-black items-center gap-[10px] rounded-[50px] max-w-[151px]  lg:py-[16px] px-[32px]">
+              <Link to="/signup" className="flex text-white bg-black items-center gap-[10px] rounded-[50px] max-w-[151px]  lg:py-[16px] px-[32px]">
                 Register <AiOutlineArrowRight size={10} />{" "}
-              </button>
+              </Link>
             </div>
             <div className="border-black rounded border-2">
               <img className="w-full" src={img1} alt="" />
