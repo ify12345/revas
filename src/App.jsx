@@ -6,6 +6,7 @@ import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import EmailConfirmation from "./components/EmailConfirmation";
 import Resend from "./components/Resend";
+import DashBoard from "./components/DashBoard";
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/signin"  element={<SignIn/>} />
             <Route path="/confirmemail"  element={<EmailConfirmation/>} />
             <Route path="/resend"  element={<Resend/>} />
+            <Route path="/dashboard"  element={<DashBoard/>} />
          </Routes>
        </>
   );
