@@ -1,6 +1,6 @@
-import check from "../assets/check.png"
+import check from "../assets/images/check.png"
 import {AiOutlineMail} from "react-icons/ai"
-import close from "../assets/close.png"
+import close from "../assets/images/close.png"
 
 
 const Success = () => {

@@ -1,8 +1,8 @@
 import { AiOutlineArrowRight } from "react-icons/ai"
-import Logo from "../assets/logorevas.png"
-import img4 from "../assets/small1.png";
-import img6 from "../assets/lefticon2.png";
-import img7 from "../assets/lefticon.png";
+import Logo from "../assets/images/logorevas.png"
+import img4 from "../assets/images/small1.png";
+import img6 from "../assets/images/lefticon2.png";
+import img7 from "../assets/images/lefticon.png";
 import { Link } from "react-router-dom";
 
 const WaitList = () => {

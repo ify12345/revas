@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
-import frame from "../assets/signup.png"
+import logo from "../assets/images/logo.png";
+import frame from "../assets/images/signup.png"
 import { AiOutlineArrowRight } from "react-icons/ai";
 const SignUp = () => {
   return (

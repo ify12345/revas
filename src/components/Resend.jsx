@@ -1,5 +1,5 @@
 
-import logo from "../assets/logo.png";
+import logo from "../assets/images/logo.png";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Resend = () => {
