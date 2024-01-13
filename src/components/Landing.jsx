@@ -13,11 +13,19 @@ import v2 from "../assets/v2.png";
 import v3 from "../assets/v3.png";
 import family from "../assets/family.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Landing = () => {
+  const[active,setActive] = useState("bales")
+  const Bales = ()=> setActive("bales")
+  const Flakes = ()=> setActive("flakes")
+  const Pellets = ()=> setActive("pellets")
+ const selected = active === "bales" ? "bg-white text-black rounded-[100px] border-black border-2" :""
+ const selected2 = active === "flakes" ? "bg-white text-black rounded-[100px] border-black border-2" :""
+ const selected3 = active === "pellets" ? "bg-white text-black rounded-[100px] border-black border-2" :""
   return (
-    <div className="">
-    <section className="bg-black w-full h-auto">
+    <div className="h-screen">
+    <section className="bg-black w-full h-full">
       {/* navbar */}
       <nav className="text-white flex justify-between py-24 px-5 md:px-10 items-center w-full gap-6 md:gap-2">
         <img className="object-cover min-w-fit" src={logo} alt="" />
@@ -55,20 +63,17 @@ const Landing = () => {
         </div>
 
       </section>
-      {/*little image */}
-       
-        
+      {/*little image */}      
     </section>
-
     <section className="max-w-full">
       {/* remaining section of page */}
-      <div className="mx-auto relative top-[-100px]  md:top-[-200px]">
+      <div className="mx-auto relative top-[-100px]  md:top-[-270px]">
         {/* image shit */}
         <div className="w-full">
           <img className="object-fit w-full" src={img} alt="" />
         </div>
 
-        <section className="w-screen border flex flex-col">
+        <section className="w-screen  flex flex-col">
           <div className="mx-auto text-center my-10">
             <p className="text-[52px] leading-[68px] font-[600]">
               Buy or Sell Recycled Plastic
@@ -78,24 +83,38 @@ const Landing = () => {
             </p>
           </div>
          {/* btn active */}
-          <div className="w-full border">
+          <div className="w-full">
             <div className=" flex justify-center gap-[9px] text-center md:gap-[18px] bg-black text-white rounded-[100px] max-w-fit mx-auto items-start">
-              <p className="p-[8px] md:p-[16px]  active">Plastic Bales</p>
-              <p className="p-[8px] md:p-[16px]">Plastic Flakes</p>
-              <p className="p-[8px] md:p-[16px]">Plastic Pellets</p>
+              <p onClick={Bales} className={`"p-[8px] p-[80px] md:p-[16px] md:p-[16px]" ${selected}`}>Plastic Bales</p>
+              <p onClick={Flakes} className={`"p-[8px] p-[80px] md:p-[16px] md:p-[16px]" ${selected2}`}>Plastic Flakes</p>
+              <p onClick={Pellets} className={`"p-[8px]  p-[80px] md:p-[16px] md:p-[16px]" ${selected3}`}>Plastic Pellets</p>
             </div>
           </div>
          {/* first grid */}
           <div className="mt-[30px] border border-[#F2F2F4] bg-[#F2F2F4] mx-[45px] xl:mx-[90px] max-w-full grid grid-cols-1 xl:grid-cols-2 auto-cols-[630.5px] items-center gap-[50px] xl:gap-[155px] p-[40px] md:p-[99px]">
             <div className="flex flex-col gap-[10px]  xl:gap-[38px] max-h-auto max-w-full">
               <p className="lg:leading-[63px] text-[20px] xl:text-[52px] font-[700]">
-                Plastic Bales
+                 {
+                  selected && "Plastic Bales"
+                }
+                 {
+                  selected2 && "Plastic Flakes"
+                }
+                 {
+                  selected3 && "Plastic Pellets"
+                }
               </p>
               <p className="leading-[18px] xl:leading-[26px] text-[14px] xl:text-[20px] font-[400]">
-                Bales trading on the RPX are primarily any whole polyethylene
-                terephthalate (PET) bottle with a screw-neck top that contains
-                the ASTM D7611 “#1, PET or PETE” resin identification code and
-                that is clear, transparent green, or transparent light blue.
+                {
+                  selected && "Bales trading on the RPX are primarily any whole polyethyleneterephthalate (PET) bottle with a screw-neck top that contains the ASTM D7611 “#1, PET or PETE” resin identification code and that is clear, transparent green, or transparent light blue."
+                }
+                {
+                  selected2 && "Flake for the RPX goes through a process of  PET bottles being pre-sorted – rejecting impurities both by colour and material type,as well as a subsequent washing process –  the bottles are put into a grinder or shredder  and turned into flakes."
+                }
+                {
+                  selected3 && "Plastic resin pellets are small granules generally with shape of a cylinder or a disk  with a diameter of a few millimetres. These plastic particles are industrial raw material that are sold to manufacturing sites where 'user plastics' are made by re-melting and    moulding into the final products or packaging."
+                }
+               
               </p>
               <Link to="/signup" className="flex text-white bg-black items-center gap-[10px] rounded-[50px] max-w-[151px]  lg:py-[16px] px-[32px]">
                 Register <AiOutlineArrowRight size={10} />{" "}
@@ -209,7 +228,7 @@ value of plastic waste.</p>
            </div>
            {/*footer*/}
 
-<div className="bg-black gap-[53px]  grid grid-cols-1  p-[22px] md:p-[45px] text-white text-[7px] md:text-[16px] leading-[20px]">
+<div className="bg-black gap-[53px] h-full  grid grid-cols-1  p-[22px] md:p-[45px] text-white text-[7px] md:text-[16px] leading-[20px]">
 
                <img className="object-cover max-w-[216px]" src={logo} alt="" />
 
